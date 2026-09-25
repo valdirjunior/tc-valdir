@@ -1,0 +1,27 @@
+# Ambiente virtual e arquivos Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Configurações locais
+.env
+.env.*
+!.env.example
+.vscode/
+
+# Resultados gerados pelas simulações
+output/*
+!output/.gitkeep
+
+# Arquivos temporários
+*.log
+*.tmp
+*.bak
+*~
+tree.txt
+
+# Arquivos do Windows
+Thumbs.db
+Desktop.ini
