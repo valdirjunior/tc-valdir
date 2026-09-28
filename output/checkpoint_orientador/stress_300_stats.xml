@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-09-28T19:31:53.789429-03:00 by Eclipse SUMO sumo 1.27.1
+<sumoConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value=".\config\nereu_ramos.net.xml"/>
+        <route-files value=".\output\stress_rede\stress_300.rou.xml"/>
+    </input>
+
+    <output>
+        <summary-output value=".\output\stress_rede\stress_300_summary.xml"/>
+        <summary-output.period value="1"/>
+        <tripinfo-output value=".\output\stress_rede\stress_300_tripinfo.xml"/>
+        <lanechange-output value=".\output\stress_rede\stress_300_lanechanges.xml"/>
+        <collision-output value=".\output\stress_rede\stress_300_collisions.xml"/>
+        <statistic-output value=".\output\stress_rede\stress_300_stats.xml"/>
+    </output>
+
+    <time>
+        <begin value="0"/>
+        <end value="1200"/>
+        <step-length value="0.1"/>
+    </time>
+
+    <processing>
+        <collision.action value="warn"/>
+        <collision.check-junctions value="true"/>
+    </processing>
+
+    <report>
+        <error-log value=".\output\stress_rede\stress_300_warnings.log"/>
+    </report>
+
+    <random_number>
+        <seed value="42"/>
+    </random_number>
+
+</sumoConfiguration>
+-->
+
+<statistics xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/statistic_file.xsd">
+    <performance clockBegin="2305.49" clockEnd="2307.04" clockDuration="1.55" traciDuration="10.37" realTimeFactor="774.19" vehicleUpdatesPerSecond="112355.48" personUpdatesPerSecond="0.00" begin="0.00" end="1200.00" duration="1200.00"/>
+    <vehicles loaded="300" inserted="300" running="0" waiting="0"/>
+    <teleports total="0" jam="0" yield="0" wrongLane="0"/>
+    <safety collisions="0" emergencyStops="0" emergencyBraking="0"/>
+    <persons loaded="0" running="0" jammed="0"/>
+    <personTeleports total="0" abortWait="0" wrongDest="0"/>
+    <vehicleTripStatistics count="300" routeLength="600.19" speed="10.68" duration="58.05" waitingTime="1.65" timeLoss="8.31" departDelay="0.29" departDelayWaiting="-1.00" totalTravelTime="17415.10" totalDepartDelay="87.60"/>
+    <pedestrianStatistics number="0" routeLength="0.00" duration="0.00" timeLoss="0.00"/>
+    <rideStatistics number="0"/>
+    <transportStatistics number="0"/>
+</statistics>
