@@ -243,56 +243,67 @@ do SUMO.
 
 ---
 
-## 11. Teste diagnóstico de impaciência
+## 11. Ajuste e definição do `time-to-impatience`
 
-Foi realizado um teste mantendo:
+Durante o teste com 600 veículos foi observada uma retenção excessiva em uma
+interseção já reconhecida como ponto de gargalo da região.
 
-- a mesma rede;
+Na inspeção visual, veículos aguardando em uma aproximação sem prioridade
+permaneciam parados mesmo quando existiam lacunas aparentemente suficientes
+para realizar a entrada na corrente principal. Essa hesitação provocava o
+crescimento da fila e, em determinados momentos, comprometia excessivamente
+a circulação naquele trecho.
+
+A partir dessa observação, foi investigado o parâmetro global
+`time-to-impatience` do SUMO, relacionado ao tempo necessário para o aumento
+progressivo da impaciência dos veículos durante situações de espera.
+
+A configuração utilizada inicialmente correspondia a 180 segundos.
+
+Foram realizados testes com 120, 90 e 60 segundos, mantendo constantes:
+
+- a rede viária;
 - os mesmos 600 veículos;
 - as mesmas rotas;
-- a mesma distribuição de demanda;
-- a mesma seed;
+- a mesma distribuição de demanda 10:6:1;
+- a mesma semente pseudoaleatória;
 - os demais parâmetros da simulação.
 
-A única alteração foi:
+Os resultados obtidos foram:
 
-`--time-to-impatience 60`
+| `time-to-impatience` | Velocidade média | Duração média | Waiting time | Time loss | Emergency braking |
+|---:|---:|---:|---:|---:|---:|
+| 180 s | 10,37 m/s | 72,16 s | 6,71 s | 17,83 s | 0 |
+| 120 s | 10,58 m/s | 68,55 s | 4,99 s | 14,23 s | 1 |
+| 90 s | 10,67 m/s | 66,98 s | 3,96 s | 12,65 s | 0 |
+| 60 s | 10,74 m/s | 66,24 s | 3,48 s | 11,91 s | 0 |
 
-O comportamento padrão utilizado anteriormente correspondia a um crescimento de
-impaciência mais lento.
+A redução do parâmetro produziu diminuição progressiva do tempo parado e do
+`time loss`.
 
-Com o novo valor, observou-se visualmente uma alteração significativa no comportamento
-da interseção problemática.
+Na inspeção visual, os valores de 60 e 90 segundos apresentaram comportamento
+bastante semelhante. Em ambos os casos, os veículos passaram a aproveitar
+oportunidades de entrada com maior frequência, reduzindo significativamente
+a fila excessiva observada anteriormente.
 
-Os veículos aguardando passaram a aproveitar oportunidades de entrada mais rapidamente.
+O valor de 120 segundos ainda apresentou maior retenção, enquanto a configuração
+de 180 segundos foi considerada excessivamente conservadora para a dinâmica da
+interseção analisada.
 
-Ainda houve formação de filas, como esperado para o local, porém:
+### Decisão adotada
 
-- as filas foram significativamente menores;
-- os veículos apresentaram menor hesitação;
-- o gargalo continuou existindo, mas deixou de provocar o travamento exagerado observado
-  anteriormente;
-- o comportamento visual foi considerado mais plausível.
+Foi definido `time-to-impatience = 90` segundos como configuração-base do cenário.
 
-O teste reforça a hipótese de que parte da retenção observada anteriormente estava
-associada ao comportamento de aceitação de oportunidades na interseção, e não exclusivamente
-ao nível de demanda.
+A escolha considerou que o valor apresentou comportamento visual semelhante ao
+obtido com 60 segundos e resultados quantitativos próximos, mas representa uma
+alteração menos intensa em relação à configuração inicial.
 
-### Situação do parâmetro
+Com 90 segundos, os 600 veículos foram inseridos e concluíram suas viagens sem
+teleports, colisões ou frenagens de emergência.
 
-O valor de 60 s NÃO está definido definitivamente.
-
-Ele deve ser tratado neste momento como valor experimental/candidato.
-
-Ainda deverá ser decidido se:
-
-1. `time-to-impatience` será uma configuração-base comum a todos os veículos; ou
-2. a impaciência fará parte da diferenciação entre os perfis de motorista.
-
-Essa decisão deverá considerar a documentação do SUMO, literatura sobre comportamento
-de motoristas e os testes com os perfis cauteloso, normal e agressivo.
-
----
+O parâmetro será mantido constante nos experimentos oficiais, permitindo que as
+comparações posteriores sejam concentradas nas diferenças entre os perfis de
+motorista e nos níveis de demanda.
 
 ## 12. Situação atual da demanda
 
@@ -312,6 +323,11 @@ Até o momento:
 
 Testes adicionais deverão ser realizados antes da definição final dos níveis de demanda.
 
+### Parâmetros já definidos
+
+- ponderação preliminar das entradas e saídas: 10:6:1;
+- `time-to-impatience`: 90 segundos;
+
 ---
 
 ## 13. Decisões que ainda NÃO estão fechadas
@@ -319,26 +335,25 @@ Testes adicionais deverão ser realizados antes da definição final dos níveis
 Os seguintes pontos permanecem em avaliação:
 
 - níveis definitivos de demanda baixa, média e alta;
-- valor definitivo de `time-to-impatience`;
-- participação da impaciência na definição dos perfis;
 - valores finais dos parâmetros dos perfis cauteloso, normal e agressivo;
 - número definitivo de repetições das simulações;
 - conjunto final de sementes pseudoaleatórias.
+
 
 ---
 
 ## 14. Próximas etapas
 
-1. Executar novamente o cenário de 600 veículos com `time-to-impatience = 60`,
-   registrando todas as saídas quantitativas.
-2. Comparar os resultados com a execução de 600 veículos usando o comportamento padrão.
-3. Avaliar se são necessários testes intermediários de `time-to-impatience`, como
-   90 ou 120 segundos.
-4. Definir a configuração-base do comportamento em cruzamentos.
-5. Continuar os testes de carga para determinar os níveis baixo, médio e alto.
-6. Finalizar a definição dos perfis de motorista.
-7. Congelar a configuração do cenário.
-8. Iniciar as simulações oficiais e a coleta sistemática dos resultados.
+1. Manter `time-to-impatience = 90` nos próximos testes.
+2. Continuar os testes de carregamento da rede para definir os níveis baixo,
+   médio e alto de demanda.
+3. Avaliar quantitativamente e visualmente a formação de filas nos diferentes
+   níveis de carregamento.
+4. Finalizar a definição dos perfis cauteloso, normal e agressivo.
+5. Congelar a configuração completa do cenário experimental.
+6. Definir as repetições e sementes das simulações oficiais.
+7. Iniciar a segunda etapa do desenvolvimento, com execução sistemática dos
+   experimentos e coleta dos resultados.
 
 ---
 
