@@ -243,30 +243,32 @@ do SUMO.
 
 ---
 
-## 11. Ajuste e definição do `time-to-impatience`
+## 11. Ajuste do comportamento de espera em cruzamentos
 
-Durante o teste com 600 veículos foi observada uma retenção excessiva em uma
-interseção já reconhecida como ponto de gargalo da região.
+Durante os testes com maior carregamento da rede foi identificada uma retenção
+excessiva em uma interseção já reconhecida como ponto de gargalo da região.
 
 Na inspeção visual, veículos aguardando em uma aproximação sem prioridade
 permaneciam parados mesmo quando existiam lacunas aparentemente suficientes
-para realizar a entrada na corrente principal. Essa hesitação provocava o
-crescimento da fila e, em determinados momentos, comprometia excessivamente
-a circulação naquele trecho.
+para realizar a entrada na corrente principal. Embora a existência de filas nesse
+ponto seja coerente com a dinâmica observada na região, o tempo de hesitação dos
+veículos simulados produzia retenções consideradas excessivas, principalmente
+no teste com 600 veículos.
 
 A partir dessa observação, foi investigado o parâmetro global
 `time-to-impatience` do SUMO, relacionado ao tempo necessário para o aumento
 progressivo da impaciência dos veículos durante situações de espera.
 
-A configuração utilizada inicialmente correspondia a 180 segundos.
+A configuração inicialmente utilizada correspondia a 180 segundos.
 
-Foram realizados testes com 120, 90 e 60 segundos, mantendo constantes:
+Para avaliar a influência desse parâmetro, foram executados testes com 120, 90 e
+60 segundos. Em todos os casos foram mantidos constantes:
 
 - a rede viária;
 - os mesmos 600 veículos;
 - as mesmas rotas;
-- a mesma distribuição de demanda 10:6:1;
-- a mesma semente pseudoaleatória;
+- a distribuição de demanda;
+- a semente pseudoaleatória;
 - os demais parâmetros da simulação.
 
 Os resultados obtidos foram:
@@ -282,115 +284,320 @@ A redução do parâmetro produziu diminuição progressiva do tempo parado e do
 `time loss`.
 
 Na inspeção visual, os valores de 60 e 90 segundos apresentaram comportamento
-bastante semelhante. Em ambos os casos, os veículos passaram a aproveitar
-oportunidades de entrada com maior frequência, reduzindo significativamente
-a fila excessiva observada anteriormente.
+bastante semelhante. Em ambos os casos, os veículos passaram a aproveitar as
+oportunidades de entrada com maior frequência, mantendo a formação de filas no
+gargalo, porém sem a retenção excessiva observada anteriormente.
 
-O valor de 120 segundos ainda apresentou maior retenção, enquanto a configuração
-de 180 segundos foi considerada excessivamente conservadora para a dinâmica da
-interseção analisada.
+O valor de 120 segundos ainda apresentou maior hesitação e registrou uma
+ocorrência de frenagem de emergência. A configuração de 180 segundos foi
+considerada excessivamente conservadora para a dinâmica da interseção analisada.
 
 ### Decisão adotada
 
-Foi definido `time-to-impatience = 90` segundos como configuração-base do cenário.
+Foi definido:
 
-A escolha considerou que o valor apresentou comportamento visual semelhante ao
-obtido com 60 segundos e resultados quantitativos próximos, mas representa uma
-alteração menos intensa em relação à configuração inicial.
+`time-to-impatience = 90`
 
-Com 90 segundos, os 600 veículos foram inseridos e concluíram suas viagens sem
-teleports, colisões ou frenagens de emergência.
+O valor de 90 segundos apresentou comportamento visual próximo ao obtido com
+60 segundos e resultados quantitativos semelhantes, ao mesmo tempo em que
+representa uma alteração menos intensa em relação à configuração inicialmente
+utilizada.
 
-O parâmetro será mantido constante nos experimentos oficiais, permitindo que as
-comparações posteriores sejam concentradas nas diferenças entre os perfis de
-motorista e nos níveis de demanda.
-
-## 12. Situação atual da demanda
-
-A proporção 10:6:1 apresentou bom comportamento nos testes realizados até o momento.
-
-Ela deve ser mantida como configuração candidata enquanto são avaliados diferentes
-níveis de carregamento da rede.
-
-Ainda não foram definidos definitivamente os níveis de fluxo BAIXO, MÉDIO e ALTO.
-
-Até o momento:
-
-- 300 veículos apresentaram circulação fluida com retenções localizadas;
-- 600 veículos produziram maior interação e filas, permanecendo tecnicamente estáveis;
-- parte da fila excessiva inicialmente observada com 600 veículos foi atribuída à
-  dinâmica de impaciência/aceitação de oportunidades no cruzamento analisado.
-
-Testes adicionais deverão ser realizados antes da definição final dos níveis de demanda.
-
-### Parâmetros já definidos
-
-- ponderação preliminar das entradas e saídas: 10:6:1;
-- `time-to-impatience`: 90 segundos;
+O parâmetro será mantido constante como configuração-base nos experimentos
+posteriores, evitando que sua variação interfira nas comparações entre os
+diferentes cenários comportamentais.
 
 ---
 
-## 13. Decisões que ainda NÃO estão fechadas
+## 12. Definição da distribuição da demanda
 
-Os seguintes pontos permanecem em avaliação:
+Os testes preliminares com geração totalmente aleatória de viagens mostraram
+uma distribuição pouco plausível entre as vias da rede. Algumas ruas conhecidas
+por possuir baixo movimento no cenário real recebiam quantidade excessiva de
+veículos, enquanto acessos de maior importância não apresentavam a diferença
+de fluxo esperada.
 
-- níveis definitivos de demanda baixa, média e alta;
-- valores finais dos parâmetros dos perfis cauteloso, normal e agressivo;
-- número definitivo de repetições das simulações;
-- conjunto final de sementes pseudoaleatórias.
+Por esse motivo, as entradas e saídas da rede foram classificadas
+qualitativamente em três níveis:
 
+- ALTA;
+- MÉDIA;
+- BAIXA.
+
+A classificação foi baseada no conhecimento local sobre a importância relativa
+dos acessos da região estudada.
+
+Foi adotada a seguinte ponderação:
+
+- ALTA = 10;
+- MÉDIA = 6;
+- BAIXA = 1.
+
+Essa ponderação não representa contagens reais de tráfego. Seu objetivo é
+estabelecer probabilidades relativas para a seleção das origens e destinos das
+viagens.
+
+A categoria MÉDIA foi propositalmente posicionada mais próxima da categoria
+ALTA, pois as vias classificadas nesse nível ainda apresentam circulação
+significativa, enquanto as vias classificadas como BAIXA possuem movimento
+consideravelmente inferior.
+
+Os pesos foram aplicados por meio dos arquivos:
+
+`config/demanda/demanda_1061.src.xml`
+
+`config/demanda/demanda_1061.dst.xml`
+
+No teste inicial com 300 viagens, todas as viagens geradas produziram rotas
+válidas e a distribuição observada foi compatível com a ponderação definida.
+
+A inspeção visual também indicou maior presença de veículos nos acessos
+classificados como ALTA e MÉDIA e baixa utilização relativa das vias
+classificadas como BAIXA.
+
+Dessa forma, a ponderação 10:6:1 foi mantida como configuração da demanda para
+os cenários experimentais.
 
 ---
 
-## 14. Próximas etapas
+## 13. Testes para definição dos níveis de demanda
 
-1. Manter `time-to-impatience = 90` nos próximos testes.
-2. Continuar os testes de carregamento da rede para definir os níveis baixo,
-   médio e alto de demanda.
-3. Avaliar quantitativamente e visualmente a formação de filas nos diferentes
-   níveis de carregamento.
-4. Finalizar a definição dos perfis cauteloso, normal e agressivo.
-5. Congelar a configuração completa do cenário experimental.
-6. Definir as repetições e sementes das simulações oficiais.
-7. Iniciar a segunda etapa do desenvolvimento, com execução sistemática dos
-   experimentos e coleta dos resultados.
+Após a definição da ponderação das entradas e saídas e do
+`time-to-impatience = 90`, foram realizados testes com diferentes quantidades
+de veículos gerados durante uma janela de 600 segundos.
+
+Foram avaliadas cargas de:
+
+- 300 veículos;
+- 450 veículos;
+- 600 veículos;
+- 750 veículos;
+- 900 veículos.
+
+Os principais resultados foram:
+
+| Veículos | Velocidade média | Duração média | Waiting time | Time loss | Depart delay | Teleports |
+|---:|---:|---:|---:|---:|---:|---:|
+| 300 | 11,46 m/s | 61,19 s | 1,34 s | 6,36 s | 0,00 s | 0 |
+| 450 | 11,10 m/s | 63,19 s | 2,32 s | 8,91 s | 0,07 s | 0 |
+| 600 | 10,67 m/s | 66,98 s | 3,96 s | 12,65 s | 0,09 s | 0 |
+| 750 | 9,01 m/s | 90,66 s | 11,71 s | 35,77 s | 1,87 s | 0 |
+
+Os cenários de 300, 450, 600 e 750 veículos foram concluídos integralmente,
+sem teleports, colisões ou warnings.
+
+### Teste com 300 veículos
+
+O cenário apresentou circulação predominantemente fluida, com pequenas filas
+e retenções localizadas nas interseções.
+
+A rede manteve boa capacidade de circulação e todos os veículos concluíram
+normalmente suas viagens.
+
+Esse nível apresentou interação suficiente entre os veículos sem produzir
+congestionamento significativo.
+
+### Teste com 450 veículos
+
+A carga de 450 veículos apresentou aumento moderado das retenções em comparação
+ao cenário de 300 veículos.
+
+Apesar disso, o comportamento geral permaneceu relativamente próximo ao
+observado na carga menor, sem uma alteração expressiva no regime de
+funcionamento da rede.
+
+### Teste com 600 veículos
+
+Com 600 veículos, tornou-se mais perceptível o aumento da interação entre os
+veículos e da formação de filas.
+
+O cenário permaneceu estável e todos os veículos foram inseridos e concluíram
+suas viagens, porém houve aumento do tempo parado e do `time loss`.
+
+A inspeção visual mostrou maior carregamento dos principais gargalos, sem
+comprometer o funcionamento geral da rede após o ajuste do
+`time-to-impatience`.
+
+### Teste com 750 veículos
+
+A carga de 750 veículos apresentou uma alteração mais acentuada no desempenho
+da rede.
+
+Foram registrados:
+
+- velocidade média de 9,01 m/s;
+- duração média de viagem de 90,66 s;
+- tempo médio parado de 11,71 s;
+- `time loss` médio de 35,77 s.
+
+Apesar da maior retenção, todos os 750 veículos foram inseridos e concluíram
+suas viagens, sem teleports, colisões, frenagens de emergência ou warnings.
+
+Na inspeção visual foi possível perceber claramente o aumento das filas nos
+principais pontos de gargalo em comparação ao cenário de 600 veículos.
+
+As filas observadas ocorreram principalmente em pontos onde já eram esperadas
+restrições de circulação, sem indicar colapso generalizado da rede.
+
+### Teste de estresse com 900 veículos
+
+O cenário com 900 veículos ultrapassou a faixa considerada adequada para os
+experimentos.
+
+Dos 900 veículos carregados:
+
+- 753 foram inseridos;
+- 147 ainda aguardavam inserção ao término da simulação;
+- 211 permaneciam em circulação;
+- apenas 542 viagens haviam sido concluídas.
+
+Também foram registrados 64 teleports:
+
+- 43 associados a congestionamento (`jam`);
+- 15 associados a espera por prioridade (`yield`);
+- 6 associados a posicionamento inadequado de faixa (`wrongLane`).
+
+O teste apresentou retenções prolongadas e propagação do congestionamento por
+diversos trechos da rede.
+
+Por esse motivo, a carga de 900 veículos foi mantida apenas como teste de
+estresse e não será utilizada como nível de demanda nos experimentos oficiais.
 
 ---
 
-## 15. Organização prevista para o desenvolvimento do TCC
+## 14. Níveis de demanda definidos
 
-Após conversa com o orientador, o desenvolvimento será organizado conceitualmente
-em duas etapas.
+Com base nos testes quantitativos e nas inspeções visuais, foram definidos os
+seguintes níveis de demanda:
+
+| Nível | Quantidade de veículos | Janela de geração |
+|---|---:|---:|
+| BAIXO | 300 | 600 s |
+| MÉDIO | 600 | 600 s |
+| ALTO | 750 | 600 s |
+
+O nível BAIXO representa uma condição de circulação predominantemente fluida,
+mantendo pequenas interações e retenções entre os veículos.
+
+O nível MÉDIO apresenta aumento perceptível da interação e da formação de filas,
+mas sem comprometimento da estabilidade da rede.
+
+O nível ALTO representa uma condição de congestionamento mais significativo,
+com aumento claro dos tempos de viagem, espera e perda de tempo, porém ainda
+sem provocar colapso operacional da rede.
+
+A carga de 450 veículos foi utilizada como ponto intermediário durante a
+calibração, mas apresentou comportamento ainda relativamente próximo ao cenário
+de 300 veículos.
+
+A carga de 900 veículos foi utilizada exclusivamente como teste de estresse,
+permitindo identificar uma faixa de saturação que não será utilizada nas
+simulações oficiais.
+
+Dessa forma, ficam definidos para os experimentos:
+
+- ponderação das entradas e saídas: 10:6:1;
+- janela de geração: 600 segundos;
+- nível baixo: 300 veículos;
+- nível médio: 600 veículos;
+- nível alto: 750 veículos;
+- `time-to-impatience`: 90 segundos.
+
+---
+
+## 15. Pendência técnica antes do congelamento completo do cenário
+
+Embora a rede, a distribuição da demanda e os níveis de fluxo tenham apresentado
+comportamento satisfatório, permanece uma observação relacionada às mudanças de
+faixa.
+
+Durante as inspeções visuais foi percebida uma tendência de alguns veículos
+realizarem mudanças estratégicas de faixa com grande antecedência.
+
+Em determinados trechos com duas faixas disponíveis, os veículos tendem a se
+posicionar antecipadamente na faixa necessária para movimentos posteriores,
+mesmo quando seria possível permanecer distribuídos entre as duas faixas por
+mais tempo.
+
+Esse comportamento pode reduzir artificialmente a utilização de uma das faixas
+e influenciar a formação de filas.
+
+Antes do congelamento definitivo do cenário, deverá ser verificado se essa
+antecipação:
+
+1. decorre do comportamento padrão do modelo de mudança de faixa do SUMO;
+2. pode ser ajustada por parâmetros do modelo de condução;
+3. deverá fazer parte da diferenciação entre os perfis de motorista; ou
+4. pode ser mantida como uma simplificação aceitável do cenário.
+
+Nenhuma alteração nesse comportamento foi definida até o momento.
+
+---
+
+## 16. Situação atual do cenário
+
+Neste ponto, encontram-se definidos:
+
+- a rede viária funcional;
+- os limites de velocidade;
+- a estrutura de entradas e saídas;
+- a classificação qualitativa dos acessos;
+- a ponderação 10:6:1 da demanda;
+- `time-to-impatience = 90`;
+- os níveis de demanda baixo, médio e alto.
+
+Os níveis definidos são:
+
+- BAIXO: 300 veículos;
+- MÉDIO: 600 veículos;
+- ALTO: 750 veículos.
+
+Ainda permanecem como etapas anteriores às simulações oficiais:
+
+- verificar o comportamento das mudanças de faixa antecipadas;
+- finalizar os parâmetros dos perfis cauteloso, normal e agressivo;
+- definir as composições dos perfis em cada cenário;
+- definir as sementes e o número de repetições;
+- preparar a automação das execuções e da coleta das métricas.
+
+Após a conclusão desses pontos, a configuração experimental deverá ser congelada
+e não deverá mais ser alterada durante a coleta oficial dos resultados.
+
+---
+
+## 17. Organização do desenvolvimento do TCC
+
+Conforme discutido com o orientador, o desenvolvimento será organizado
+conceitualmente em duas etapas.
 
 ### Etapa 1 — Preparação do cenário experimental
 
-Inclui:
+Esta etapa compreende:
 
-- construção da rede;
-- correções da malha;
+- construção e correção da rede;
 - definição das velocidades;
 - validação da circulação;
-- definição e calibração da demanda;
-- definição dos perfis de motorista;
+- definição da distribuição da demanda;
 - definição dos níveis de fluxo;
-- definição dos parâmetros e procedimentos experimentais.
+- configuração dos parâmetros-base do simulador;
+- definição dos perfis de motorista;
+- testes preliminares e calibração do cenário.
 
 Esta é a etapa atualmente em desenvolvimento.
 
 ### Etapa 2 — Execução dos experimentos
 
-Começará quando a rede, a demanda, os perfis e os demais parâmetros forem considerados
-estáveis.
+A segunda etapa será iniciada após o congelamento da configuração experimental.
 
-Inclui:
+Ela compreenderá:
 
 - geração dos cenários experimentais;
-- execução das simulações oficiais;
-- repetições com sementes definidas;
+- execução sistemática das simulações;
+- repetições com sementes pseudoaleatórias definidas;
 - coleta das métricas;
 - consolidação dos dados;
-- comparação dos perfis e níveis de demanda;
+- comparação entre os níveis de demanda e as composições de perfis;
 - análise e discussão dos resultados.
 
-A separação definitiva em capítulos e os títulos das seções ainda deverão ser ajustados
-durante a escrita final.
+A organização definitiva dessas etapas em capítulos e seções será realizada
+durante a escrita do TCC.
