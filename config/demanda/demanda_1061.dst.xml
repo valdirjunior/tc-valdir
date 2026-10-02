@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<edgedata>
+    <interval begin="0" end="600">
+
+        <!-- ALTA -->
+        <edge id="1377929346#0" value="10"/> <!-- Rua Saul Brandalise -->
+        <edge id="98384536#0" value="10"/> <!-- Rua Nicolau Cavon -->
+
+        <!-- MÉDIA -->
+        <edge id="-99643286#2" value="6"/> <!-- Rua XV de Novembro -->
+        <edge id="103925179#1" value="6"/> <!-- Rua Brasil -->
+        <edge id="99429213#1" value="6"/> <!-- Rua Antônio Fávero -->
+
+        <!-- BAIXA -->
+        <edge id="102361495#0" value="1"/> <!-- Rua Antônio Marafon -->
+        <edge id="102361574" value="1"/> <!-- Rua Osvaldo Cruz -->
+        <edge id="103925196#0" value="1"/> <!-- Rua Padre Anchieta -->
+
+    </interval>
+</edgedata>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<edgedata>
+    <interval begin="0" end="600">
+
+        <!-- ALTA -->
+        <edge id="-1377929346#0" value="10"/> <!-- Rua Saul Brandalise -->
+        <edge id="320316411#0.175" value="10"/> <!-- Avenida Dom Pedro II -->
+        <edge id="99429224#2" value="10"/> <!-- Rua XV de Novembro -->
+
+        <!-- MÉDIA -->
+        <edge id="-103925179#1" value="6"/> <!-- Rua Brasil -->
+        <edge id="99643286#2" value="6"/> <!-- Rua XV de Novembro -->
+
+        <!-- BAIXA -->
+        <edge id="-102361495#0" value="1"/> <!-- Rua Antônio Marafon -->
+        <edge id="-102361574.302" value="1"/> <!-- Rua Osvaldo Cruz -->
+        <edge id="99631677" value="1"/> <!-- Rua Santa Catarina -->
+
+    </interval>
+</edgedata>
