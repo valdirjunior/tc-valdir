@@ -503,6 +503,53 @@ Dessa forma, ficam definidos para os experimentos:
 - nível alto: 750 veículos;
 - `time-to-impatience`: 90 segundos.
 
+
+## Ajuste final da geometria na região da Matriz
+
+Após a definição inicial dos níveis de demanda, foi realizada uma nova
+verificação visual de um ponto de conversão à esquerda no acesso em direção
+ao bairro Matriz, pela Rua Saul Brandalise.
+
+A partir de observação realizada diretamente no local, verificou-se que a
+geometria real possui um pequeno espaço que permite que aproximadamente um ou
+dois veículos aguardem a oportunidade de realizar a conversão sem bloquear
+completamente os veículos que continuam pela via.
+
+Essa característica não estava representada adequadamente na rede de
+simulação. Consequentemente, quando um veículo aguardava para realizar a
+conversão à esquerda, toda a fila atrás dele permanecia bloqueada, mesmo
+quando os demais veículos poderiam continuar o deslocamento.
+
+Foi realizado um pequeno ajuste na geometria da rede, utilizando uma divisão
+do trecho para representar esse espaço de espera.
+
+A alteração foi inicialmente verificada por inspeção visual. Embora poucos
+veículos tenham realizado a conversão durante o teste observado, foi possível
+confirmar que um veículo passou a conseguir aguardar no espaço criado sem
+necessariamente bloquear o fluxo que seguia pela via.
+
+Após a alteração, as rotas correspondentes aos níveis de 300, 600 e 750
+veículos foram recalculadas para a nova topologia.
+
+Foram então realizados testes rápidos de integridade da rede.
+
+| Veículos | Inseridos | Finalizaram a execução sem veículos restantes | Teleports | Colisões | Frenagens de emergência |
+|---:|---:|---:|---:|---:|---:|
+| 300 | 300 | Sim | 0 | 0 | 0 |
+| 600 | 600 | Sim | 0 | 0 | 0 |
+| 750 | 750 | Sim | 0 | 0 | 0 |
+
+Os testes indicaram que a correção localizada não introduziu problemas de
+circulação nos três níveis de demanda adotados.
+
+A versão anterior da rede foi preservada em:
+
+`referencia/nereu_ramos_pre_ajuste_matriz.net.xml`
+
+A rede ajustada passou a ser mantida como versão principal em:
+
+`config/nereu_ramos.net.xml`
+
 ---
 
 ## 15. Pendência técnica antes do congelamento completo do cenário
@@ -538,30 +585,25 @@ Nenhuma alteração nesse comportamento foi definida até o momento.
 
 Neste ponto, encontram-se definidos:
 
-- a rede viária funcional;
+- a rede viária utilizada nos experimentos;
 - os limites de velocidade;
-- a estrutura de entradas e saídas;
-- a classificação qualitativa dos acessos;
-- a ponderação 10:6:1 da demanda;
-- `time-to-impatience = 90`;
-- os níveis de demanda baixo, médio e alto.
+- a estrutura e ponderação das entradas e saídas;
+- a ponderação de demanda 10:6:1;
+- `time-to-impatience = 90` segundos;
+- fluxo baixo: 300 veículos;
+- fluxo médio: 600 veículos;
+- fluxo alto: 750 veículos;
+- janela de geração da demanda: 600 segundos.
 
-Os níveis definidos são:
+A rede e a configuração da demanda são consideradas encerradas para a etapa
+experimental. Novas alterações somente deverão ser realizadas caso os testes
+posteriores revelem algum problema que comprometa diretamente a validade das
+simulações.
 
-- BAIXO: 300 veículos;
-- MÉDIO: 600 veículos;
-- ALTO: 750 veículos.
-
-Ainda permanecem como etapas anteriores às simulações oficiais:
-
-- verificar o comportamento das mudanças de faixa antecipadas;
-- finalizar os parâmetros dos perfis cauteloso, normal e agressivo;
-- definir as composições dos perfis em cada cenário;
-- definir as sementes e o número de repetições;
-- preparar a automação das execuções e da coleta das métricas.
-
-Após a conclusão desses pontos, a configuração experimental deverá ser congelada
-e não deverá mais ser alterada durante a coleta oficial dos resultados.
+Foi observada uma tendência de alguns veículos realizarem mudanças estratégicas
+de faixa com antecedência. Até o momento, entretanto, esse comportamento não
+demonstrou comprometer o funcionamento da rede e não será tratado como uma
+pendência impeditiva para o avanço do trabalho.
 
 ---
 

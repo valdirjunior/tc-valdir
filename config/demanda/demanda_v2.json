@@ -1,0 +1,179 @@
+{
+  "origens": [
+    {
+      "edge": "-1377929346#0",
+      "peso": 5,
+      "nome": "Saul Brandalise"
+    },
+    {
+      "edge": "320316411#0.175",
+      "peso": 5,
+      "nome": "Av. Dom Pedro II"
+    },
+    {
+      "edge": "-E4",
+      "peso": 5,
+      "nome": "XV de Novembro"
+    },
+    {
+      "edge": "-103925179#1",
+      "peso": 3,
+      "nome": "Rua Brasil"
+    },
+    {
+      "edge": "99643286#2",
+      "peso": 3,
+      "nome": "XV de Novembro - acesso secundario"
+    },
+    {
+      "edge": "-102361495#0",
+      "peso": 2,
+      "nome": "Antonio Marafon"
+    },
+    {
+      "edge": "-102361574.302",
+      "peso": 1,
+      "nome": "Osvaldo Cruz"
+    },
+    {
+      "edge": "99631677",
+      "peso": 1,
+      "nome": "Santa Catarina"
+    },
+    {
+      "edge": "-E5",
+      "peso": 1,
+      "nome": "Farroupilha"
+    },
+    {
+      "edge": "-E6",
+      "peso": 1,
+      "nome": "Nicolau Cavon"
+    }
+  ],
+  "destinos": [
+    {
+      "edge": "1377929346#0.14",
+      "peso": 6,
+      "nome": "Saul Brandalise"
+    },
+    {
+      "edge": "E4",
+      "peso": 5,
+      "nome": "XV de Novembro"
+    },
+    {
+      "edge": "-99643286#2",
+      "peso": 4,
+      "nome": "XV de Novembro - acesso secundario"
+    },
+    {
+      "edge": "103925179#1",
+      "peso": 3,
+      "nome": "Rua Brasil"
+    },
+    {
+      "edge": "99429213#1",
+      "peso": 2,
+      "nome": "Antonio Favero"
+    },
+    {
+      "edge": "102361495#0",
+      "peso": 1,
+      "nome": "Antonio Marafon"
+    },
+    {
+      "edge": "102361574",
+      "peso": 1,
+      "nome": "Osvaldo Cruz"
+    },
+    {
+      "edge": "103925196#0",
+      "peso": 1,
+      "nome": "Padre Anchieta"
+    },
+    {
+      "edge": "E5",
+      "peso": 1,
+      "nome": "Farroupilha"
+    },
+    {
+      "edge": "E6",
+      "peso": 1,
+      "nome": "Nicolau Cavon"
+    },
+    {
+      "edge": "E8",
+      "peso": 1,
+      "nome": "Sete de Setembro"
+    },
+    {
+      "edge": "E9",
+      "peso": 1,
+      "nome": "Duque de Caxias"
+    }
+  ],
+  "fator_retorno_mesmo_corredor": 0.2,
+  "pares_penalizados": [
+    {
+      "origem": "-1377929346#0",
+      "destino": "1377929346#0.14",
+      "fator": 0.2,
+      "descricao": "Saul -> Saul"
+    },
+    {
+      "origem": "-E4",
+      "destino": "E4",
+      "fator": 0.2,
+      "descricao": "XV -> XV"
+    },
+    {
+      "origem": "-103925179#1",
+      "destino": "103925179#1",
+      "fator": 0.2,
+      "descricao": "Brasil -> Brasil"
+    },
+    {
+      "origem": "-102361495#0",
+      "destino": "102361495#0",
+      "fator": 0.2,
+      "descricao": "Antonio Marafon -> Antonio Marafon"
+    },
+    {
+      "origem": "-102361574.302",
+      "destino": "102361574",
+      "fator": 0.2,
+      "descricao": "Osvaldo Cruz -> Osvaldo Cruz"
+    },
+    {
+      "origem": "99643286#2",
+      "destino": "-99643286#2",
+      "fator": 0.2,
+      "descricao": "XV secundaria -> XV secundaria"
+    },
+    {
+      "origem": "-E5",
+      "destino": "E5",
+      "fator": 0.2,
+      "descricao": "Farroupilha -> Farroupilha"
+    },
+    {
+      "origem": "-E6",
+      "destino": "E6",
+      "fator": 0.2,
+      "descricao": "Nicolau -> Nicolau"
+    },
+    {
+      "origem": "-1377929346#0",
+      "destino": "103925179#1",
+      "fator": 0.6,
+      "descricao": "Saul -> Rua Brasil"
+    },
+    {
+      "origem": "-103925179#1",
+      "destino": "1377929346#0.14",
+      "fator": 0.6,
+      "descricao": "Rua Brasil -> Saul"
+    }
+  ]
+}

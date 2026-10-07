@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<additional>
+
+    <!--
+        Perfis comportamentais iniciais.
+        Valores sujeitos a validacao por testes preliminares.
+    -->
+
+    <vType
+        id="cauteloso"
+        vClass="passenger"
+        carFollowModel="Krauss"
+        tau="1.25"
+        minGap="3.0"
+        accel="2.5"
+        decel="4.0"
+        sigma="0.5"
+        speedFactor="0.90"
+        speedDev="0.10"
+        lcAssertive="0.80"
+        impatience="-0.25"
+        color="0.20,0.65,1.00"
+    />
+
+    <vType
+        id="normal"
+        vClass="passenger"
+        carFollowModel="Krauss"
+        tau="1.00"
+        minGap="2.5"
+        accel="2.6"
+        decel="4.5"
+        sigma="0.5"
+        speedFactor="1.00"
+        speedDev="0.10"
+        lcAssertive="1.00"
+        impatience="0.00"
+        color="0,1,0"
+    />
+
+    <vType
+        id="agressivo"
+        vClass="passenger"
+        carFollowModel="Krauss"
+        tau="0.75"
+        minGap="2.0"
+        accel="2.9"
+        decel="5.0"
+        sigma="0.5"
+        speedFactor="1.10"
+        speedDev="0.10"
+        lcAssertive="1.20"
+        impatience="0.25"
+        color="1,0,0"
+    />
+
+</additional>
