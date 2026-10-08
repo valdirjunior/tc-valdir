@@ -8,6 +8,13 @@
 
 $ErrorActionPreference = "Stop"
 
+# ------------------------------------------------------------
+# Cronometragem da coleta oficial
+# ------------------------------------------------------------
+
+$inicioExperimento = Get-Date
+$cronometroExperimento = [System.Diagnostics.Stopwatch]::StartNew()
+
 # ============================================================
 # EXPERIMENTO FINAL - TC
 #
@@ -438,3 +445,43 @@ Write-Host ""
 Write-Host "Este script NAO analisa os resultados."
 Write-Host "A analise sera executada posteriormente a partir dos XMLs salvos."
 Write-Host "================================================================"
+
+# ------------------------------------------------------------
+# Finaliza e registra o tempo total da coleta
+# ------------------------------------------------------------
+
+$cronometroExperimento.Stop()
+$fimExperimento = Get-Date
+
+$arquivoTempo = Join-Path $PastaSaida "tempo_execucao.txt"
+
+$registroTempo = @"
+EXPERIMENTO FINAL - TEMPO DE EXECUCAO
+=====================================
+
+Inicio: $($inicioExperimento.ToString("yyyy-MM-dd HH:mm:ss"))
+Fim: $($fimExperimento.ToString("yyyy-MM-dd HH:mm:ss"))
+
+Duracao:
+$($cronometroExperimento.Elapsed.ToString())
+
+Duracao em minutos:
+$([math]::Round($cronometroExperimento.Elapsed.TotalMinutes, 2))
+
+Duracao em horas:
+$([math]::Round($cronometroExperimento.Elapsed.TotalHours, 3))
+
+Numero de execucoes previstas:
+$($Seeds.Count * $Fluxos.Count * $cenarios.Count)
+"@
+
+$registroTempo | Set-Content $arquivoTempo -Encoding UTF8
+
+Write-Host ""
+Write-Host "Tempo total da coleta:"
+Write-Host "  Inicio:  $($inicioExperimento.ToString('yyyy-MM-dd HH:mm:ss'))"
+Write-Host "  Fim:     $($fimExperimento.ToString('yyyy-MM-dd HH:mm:ss'))"
+Write-Host "  Duracao: $($cronometroExperimento.Elapsed)"
+Write-Host "  Horas:   $([math]::Round($cronometroExperimento.Elapsed.TotalHours, 3))"
+Write-Host ""
+Write-Host "Tempo salvo em: $arquivoTempo"
