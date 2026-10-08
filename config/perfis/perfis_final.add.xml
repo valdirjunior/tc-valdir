@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<additional>
+    <!--
+      PERFIS OFICIAIS - EXPERIMENTO FINAL
+
+      Configuracao congelada apos:
+      - fundamentacao bibliografica;
+      - testes preliminares de plausibilidade;
+      - validacao da rede/demanda;
+      - analise exploratoria de sensibilidade.
+
+      jmTimegapMinor = 0.80 e comum aos tres perfis e deve ser
+      interpretado como ajuste global de plausibilidade do cenario,
+      nao como calibracao empirica dos motoristas de Videira.
+
+      lcStrategic = 1.0 mantem o valor de referencia adotado.
+      lcStrategicLookahead nao e definido, portanto permanece
+      no comportamento padrao da versao instalada do SUMO.
+    -->
+
+    <vType id="cauteloso"
+           vClass="passenger"
+           carFollowModel="Krauss"
+           tau="1.25"
+           minGap="3.0"
+           accel="2.5"
+           decel="4.0"
+           sigma="0.5"
+           speedFactor="0.90"
+           speedDev="0.10"
+           lcAssertive="0.80"
+           lcStrategic="1.0"
+           impatience="-0.25"
+           jmTimegapMinor="0.80"
+           color="0,0,1"/>
+
+    <vType id="normal"
+           vClass="passenger"
+           carFollowModel="Krauss"
+           tau="1.00"
+           minGap="2.5"
+           accel="2.6"
+           decel="4.5"
+           sigma="0.5"
+           speedFactor="1.00"
+           speedDev="0.10"
+           lcAssertive="1.00"
+           lcStrategic="1.0"
+           impatience="0.00"
+           jmTimegapMinor="0.80"
+           color="0,1,0"/>
+
+    <vType id="agressivo"
+           vClass="passenger"
+           carFollowModel="Krauss"
+           tau="0.75"
+           minGap="2.0"
+           accel="2.9"
+           decel="5.0"
+           sigma="0.5"
+           speedFactor="1.10"
+           speedDev="0.10"
+           lcAssertive="1.20"
+           lcStrategic="1.0"
+           impatience="0.25"
+           jmTimegapMinor="0.80"
+           color="1,0,0"/>
+</additional>
