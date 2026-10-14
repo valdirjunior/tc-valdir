@@ -41,3 +41,9 @@ Scripts em scripts/; entregas oficiais versionadas em output/analise/.
 
 Procedimento e resultados atuais: [checkpoint estatistico](docs/checkpoint-estatistica-viagem-2026-10-14.md).
 ICs simultaneos aproximados para 18 contrastes; etapa exploratoria, com todas as 30 seeds.
+
+
+## Analise espacial das filas
+
+Localizacao e comparacoes descritivas: [checkpoint espacial](docs/checkpoint-filas-espacial-2026-10-14.md).
+Todas as 630 execucoes e 198 faixas preservadas; nomes com origem documentada.

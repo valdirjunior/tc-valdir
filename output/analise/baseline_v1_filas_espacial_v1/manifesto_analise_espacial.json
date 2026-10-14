@@ -1,0 +1,81 @@
+{
+  "version": "1.0.0",
+  "scope": "ESPACIAL_DESCRITIVA_EXPLORATORIA",
+  "rows_received": 249480,
+  "runs": 630,
+  "lanes": 198,
+  "external_lanes": 94,
+  "internal_lanes": 104,
+  "seeds_excluded": 0,
+  "lanes_excluded": 0,
+  "windows": [
+    [
+      0,
+      600
+    ],
+    [
+      0,
+      1800
+    ]
+  ],
+  "derived_window": [
+    600,
+    1800
+  ],
+  "negative_roundoff_values_clipped_in_derived_window": 2572,
+  "negative_roundoff_tolerance_m": 1e-07,
+  "hypothesis_tests_or_confidence_intervals_computed": false,
+  "top_selection": "REF625, mean queue length; same cohort; exploratory",
+  "graph_lane_ids": [
+    "-E5_0",
+    "203038544#1_2",
+    "-E6_0",
+    "98384533_2",
+    ":1138208969_3_0",
+    "320316413_1",
+    ":1149979222_2_1",
+    "99631677_0",
+    "98384533_1",
+    "313365849_1"
+  ],
+  "name_source_counts": {
+    "JUNCAO_REDE": 104,
+    "OSM_ID_BASE": 73,
+    "SEM_NOME": 13,
+    "ROTULO_DEMANDA_CONGELADA": 8
+  },
+  "original_lane_name_field_nonempty_count": 0,
+  "beyond_lane_length_rows": 7522,
+  "interpretation_limit": "Exported queue extent can exceed lane length; no occupancy or spillback inferred. Presence is not continuous episode duration.",
+  "source_files_sha256": {
+    "filas_por_faixa.csv": "a504d0b24d011f8cbc8ecff065ec53688c13b39ff3bfd5be1cffa203ad513ae9",
+    "base_execucoes.csv": "6494e415f8e37cdbe06c1c68dd7fef6c08f6c52773e461441ffe07b935cd0701",
+    "manifesto_consolidacao.json": "39deab485d3a744f39999a425c5508177244dc3ff45ac1d2ca3c68e65a203342",
+    "nereu_ramos.net.xml": "68c63473c39b36cfa967414ffb3b79ac6300508d9ee4b41e4d083060fd5739ef",
+    "demanda_v2.json": "c469496227dc2faa12fe8bbf683231ed78566f071f313e00bce59676ba90cbd6",
+    "nereu_ramos_original.osm": "b6831427ac8bf63045748579691258e3024fd203b538a9027a9cc6e023be21aa"
+  },
+  "osm_repository": "valdirjunior/tc-valdir/mapa/nereu_ramos.osm",
+  "osm_git_blob_sha": "dd3a851168dbd986f788df09e250380ca8a17440",
+  "script_sha256": "ee8a7675c8107817e0edc501c8504214abe33d4841170e9e2f76d013ddd5ba79",
+  "created_at_utc": "2026-10-14T22:37:56.751042+00:00",
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "matplotlib": "3.10.8"
+  },
+  "files_sha256": {
+    "08_mapa_filas_REF625.png": "b6a8e53de7a158c091590293457436edbf95e8f9a539d514794daf09b6fbeb83",
+    "concentracao_REF.csv": "4f463c222e8a8d1ff2dfa0032ae48fec3af3a1d8a6dfa04a6f49f004403f1bb1",
+    "metadados_faixas.csv": "04105da2082d6848f37567560883958b546a78833cd7e961ef692cd8f114815a",
+    "fase_600_1800_derivada.csv": "aef796dbf8968fb44c0e9c395ff300bf7fba85425a88e34043b238bcc2fa124e",
+    "resumo_por_faixa.csv": "841a3ff228f58d39a650d93aba613f23818356cd017988a8ae82fbbfe39203b9",
+    "decomposicao_diferencas.csv": "434258bf0d3e73016474cfdfef7d6e33714d90efffd4fd7735b115f761360d56",
+    "reconciliacao.csv": "f38dec8833889c95e8d9bc2e5a10fc1e0be7b628182cff3afab53f3771b00a90",
+    "08_mapa_filas_REF625.svg": "94f33a597a7e77074c0f2262e969ad98e8f3058a344c5b32adecc45269cdc58b",
+    "contrastes_pareados_por_faixa.csv": "c6b325a73af19e6868572e6c69d063754d6b8135917d26f739a121c7655635aa",
+    "07_faixas_comparacao_625.svg": "f8aba003d8c3bc7ddf6fbf2492c11816120b5ce642de7c695e72c483f0058532",
+    "07_faixas_comparacao_625.png": "3a9bacea9a68b62b901b2d7d0863e73cb66ba84eada3d578e9211cb748ca45a1"
+  }
+}

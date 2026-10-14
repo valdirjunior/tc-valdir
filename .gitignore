@@ -38,3 +38,8 @@ output/analise/*
 # Estatistica de viagem versionada - TC
 !output/analise/
 !output/analise/baseline_v1_estatistica_v1/
+
+
+# Analise espacial de filas versionada - TC
+!output/analise/
+!output/analise/baseline_v1_filas_espacial_v1/

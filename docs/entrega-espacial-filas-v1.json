@@ -1,0 +1,44 @@
+{
+  "delivery": "Analise_Espacial_Filas_SUMO_v1",
+  "repository": "valdirjunior/tc-valdir",
+  "input_csv_sha256": "a504d0b24d011f8cbc8ecff065ec53688c13b39ff3bfd5be1cffa203ad513ae9",
+  "files_sha256": {
+    "docs/analise-filas-espacial-v1_0.md": "6c8b50e98394c94485a7e0004a2c3a555e0aec823d1dd865662b0a04f89e5e55",
+    "docs/checkpoint-filas-espacial-2026-10-14.md": "6f5bb3f612e2b16aa17fba386ed4244e55b214b783cf5efdf5bb9bcb2f552df0",
+    "docs/README-filas-espacial.md": "ed077fa7c3d8a24a8b5c490b5c3118d496f2628e4732a69c3742011ff202ac51",
+    "scripts/analisar_filas_espacialmente.py": "ee8a7675c8107817e0edc501c8504214abe33d4841170e9e2f76d013ddd5ba79",
+    "scripts/instalar_analise_espacial.py": "d38afeab394bf280d563b80648951efad78d8c66ce53a846ff1a9a47ef4bd356",
+    "output/analise/baseline_v1_filas_espacial_v1/08_mapa_filas_REF625.png": "b6a8e53de7a158c091590293457436edbf95e8f9a539d514794daf09b6fbeb83",
+    "output/analise/baseline_v1_filas_espacial_v1/concentracao_REF.csv": "4f463c222e8a8d1ff2dfa0032ae48fec3af3a1d8a6dfa04a6f49f004403f1bb1",
+    "output/analise/baseline_v1_filas_espacial_v1/metadados_faixas.csv": "04105da2082d6848f37567560883958b546a78833cd7e961ef692cd8f114815a",
+    "output/analise/baseline_v1_filas_espacial_v1/fase_600_1800_derivada.csv": "aef796dbf8968fb44c0e9c395ff300bf7fba85425a88e34043b238bcc2fa124e",
+    "output/analise/baseline_v1_filas_espacial_v1/resumo_por_faixa.csv": "841a3ff228f58d39a650d93aba613f23818356cd017988a8ae82fbbfe39203b9",
+    "output/analise/baseline_v1_filas_espacial_v1/decomposicao_diferencas.csv": "434258bf0d3e73016474cfdfef7d6e33714d90efffd4fd7735b115f761360d56",
+    "output/analise/baseline_v1_filas_espacial_v1/manifesto_analise_espacial.json": "ec852488546d88701102ad91a41c21d735128cbb75b94468612fb70f718f7a10",
+    "output/analise/baseline_v1_filas_espacial_v1/reconciliacao.csv": "f38dec8833889c95e8d9bc2e5a10fc1e0be7b628182cff3afab53f3771b00a90",
+    "output/analise/baseline_v1_filas_espacial_v1/08_mapa_filas_REF625.svg": "94f33a597a7e77074c0f2262e969ad98e8f3058a344c5b32adecc45269cdc58b",
+    "output/analise/baseline_v1_filas_espacial_v1/contrastes_pareados_por_faixa.csv": "c6b325a73af19e6868572e6c69d063754d6b8135917d26f739a121c7655635aa",
+    "output/analise/baseline_v1_filas_espacial_v1/07_faixas_comparacao_625.svg": "f8aba003d8c3bc7ddf6fbf2492c11816120b5ce642de7c695e72c483f0058532",
+    "output/analise/baseline_v1_filas_espacial_v1/07_faixas_comparacao_625.png": "3a9bacea9a68b62b901b2d7d0863e73cb66ba84eada3d578e9211cb748ca45a1"
+  },
+  "simulation_changed": false,
+  "seeds_excluded": 0,
+  "type": "DESCRITIVA_ESPACIAL_EXPLORATORIA",
+  "verification": {
+    "independent_summary_rows_checked": 8316,
+    "independent_paired_contrasts_checked": 7128,
+    "independent_derived_phase_rows_checked": 4158,
+    "global_reconciliations": 12,
+    "max_reconciliation_residual_m": 5.04996933159e-10,
+    "graphs_visually_checked": 2,
+    "source_csv_unchanged": true,
+    "installer_checks": [
+      "hashes",
+      "no_overwrite",
+      "dry_run",
+      "idempotence",
+      "raw_preservation",
+      "git_ignore_new_and_prior_output_visibility"
+    ]
+  }
+}

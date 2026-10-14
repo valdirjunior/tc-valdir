@@ -1,0 +1,13 @@
+﻿window_end_s;indicator;category;max_absolute_residual_m
+600;queue_mean_m;total;5.04996933159e-10
+600;queue_mean_m;external;4.79005279885e-10
+600;queue_mean_m;internal;7.3299588621e-11
+600;slow_experimental_mean_m;total;4.29309920946e-10
+600;slow_experimental_mean_m;external;4.20001811108e-10
+600;slow_experimental_mean_m;internal;7.59996510169e-11
+1800;queue_mean_m;total;2.53066900768e-10
+1800;queue_mean_m;external;4.60403271063e-10
+1800;queue_mean_m;internal;4.08597600199e-11
+1800;slow_experimental_mean_m;total;2.25583107749e-10
+1800;slow_experimental_mean_m;external;4.04810407417e-10
+1800;slow_experimental_mean_m;internal;4.81001904973e-11
