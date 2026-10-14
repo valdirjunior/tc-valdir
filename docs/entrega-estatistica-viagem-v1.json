@@ -1,0 +1,49 @@
+{
+  "delivery": "Estatistica_Viagem_SUMO_v1",
+  "repository": "valdirjunior/tc-valdir",
+  "scope": "ICs simultaneos aproximados, 18 contrastes de viagem; etapa exploratoria pos-descritiva",
+  "files_sha256": {
+    "docs/README-estatistica-viagem.md": "0519d7b75129b2b4134a8c545ab8cc2b81cfad3a16660ea72247e5cd181649e3",
+    "docs/checkpoint-estatistica-viagem-2026-10-14.md": "9ff7867f53c3b8031bf42023a4cb9fd6184633c4c56c9a1cc9b38414607b8a4c",
+    "docs/protocolo-estatistico-viagem-v1_0.md": "08c7e51c4a37e55d2d0bcc3caf905bdb46e5545c73bd67b84cffbef647c5001b",
+    "docs/referencias-estatistica-viagem.bib": "0cdd71c8ba28621797d098f7f6a80d45632fcd555dfe2049632b9ee36ccc13e8",
+    "output/analise/baseline_v1_estatistica_v1/06_ic_simultaneos_viagem.png": "f194ee55cdc64a9138920534efb0a250ce9efc7efef18f3be8a9d5a42052c83c",
+    "output/analise/baseline_v1_estatistica_v1/06_ic_simultaneos_viagem.svg": "fe9df03303c7185249d32bf39dd5be58a7da52c4a0afd5511317d0c4c17988fd",
+    "output/analise/baseline_v1_estatistica_v1/conferencia_monte_carlo.csv": "bd7dc348105687f7d9dfd91c17b6a79c1683c02453d2a0a78a6f5ae0a0c2049c",
+    "output/analise/baseline_v1_estatistica_v1/contrastes_viagem_ic_simultaneos.csv": "8159c8b25d14eb6b1a41dde8c9060f0da988fc35cb6de12aeb3421931d92a7cd",
+    "output/analise/baseline_v1_estatistica_v1/diagnostico_caudas_bca_bonferroni.csv": "77a2858f6817cb6b58f0c90366d5ff0018cab4a80514d47989574afd7e13df40",
+    "output/analise/baseline_v1_estatistica_v1/distribuicao_max_t.npz": "0ea02a5b8b1e6c98b6a52f0067e6c487bced8e8eb7abfdd0e0e2b293c739758d",
+    "output/analise/baseline_v1_estatistica_v1/influencia_por_seed_DIAGNOSTICO.csv": "e0edd5d24588a2d06db6c8d09ca560b85aff7dffa99141d7830c6a875de172af",
+    "output/analise/baseline_v1_estatistica_v1/manifesto_estatistico.json": "343fdd38cba53c42b536092f25cd8ea13ca3fefece39f222e050110c2db12574",
+    "output/analise/baseline_v1_estatistica_v1/metricas_complementares_descritivas.csv": "0869ec7114e180aa81875ea3b36028bc9d7279949bbd1d2245339a5d891788bd",
+    "output/analise/baseline_v1_estatistica_v1/relatorio_estatistico.md": "9ddce2ee8c25e531ec2810935ca281583483cc93b32232bc4e8aee27cbd162fc",
+    "output/analise/baseline_v1_estatistica_v1/resumo_influencia.csv": "9e54c937fa4999253c1737d62275df9bceabb1e918b48f806925382502b6cb29",
+    "scripts/avaliar_contrastes_viagem.py": "b1841681991c76b4caa612cd8ff9ae42aad2fbe011a3f754d0a146c6e1ae06d3",
+    "scripts/instalar_estatistica_viagem.py": "d28834710642f6a00ecea8debf8dc276c49622b8e1f5101357e8b351a1c3aaee",
+    "testes/test_estatistica_viagem.py": "59abbb6113b843a954b75c943e700ceadb7a5a9e92311f5c3c04649413e0b9e9"
+  },
+  "required_existing_files_sha256": {
+    "scripts/estimar_incerteza_pareada.py": "c8d1a5a95a0a50447ca30cb0259157061f215c6e7c7c240f5a0d7016ddad476b"
+  },
+  "simulation_changed": false,
+  "seeds_excluded": 0,
+  "verification": {
+    "algorithm_unit_tests_passed": 5,
+    "independent_numeric_validation": {
+      "source_rows": 630,
+      "contrasts": 18,
+      "bootstrap_maxima_checked_with_scalar_statistics": 500,
+      "complementary_summaries": 126
+    },
+    "chart_visually_checked": true,
+    "installer_checks": [
+      "required_dependency_hash",
+      "dry_run_no_changes",
+      "no_overwrite_preflight",
+      "idempotence",
+      "git_ignore_whitelist_and_raw_preservation"
+    ],
+    "monte_carlo_max_endpoint_change_s": 0.0012602816902,
+    "zero_membership_changed": 0
+  }
+}

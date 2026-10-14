@@ -35,3 +35,9 @@ Coleta oficial concluída e consolidada. Análise descritiva finalizada; avalia�
 Estado e caminhos atuais: [checkpoint da analise](docs/checkpoint-analise-2026-10-14.md).
 Organizacao e reproducao: [guia das analises](docs/README-analises.md).
 Scripts em scripts/; entregas oficiais versionadas em output/analise/.
+
+
+## Avaliacao estatistica do tempo de viagem
+
+Procedimento e resultados atuais: [checkpoint estatistico](docs/checkpoint-estatistica-viagem-2026-10-14.md).
+ICs simultaneos aproximados para 18 contrastes; etapa exploratoria, com todas as 30 seeds.

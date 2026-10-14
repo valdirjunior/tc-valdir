@@ -1,0 +1,52 @@
+{
+  "version": "1.0.0",
+  "method": "BOOTSTRAP_MAX_T_SINGLE_STEP",
+  "family": "18_contrastes_viagem_ante_REF",
+  "n_pairs": 30,
+  "family_size": 18,
+  "nominal_joint_confidence": 0.95,
+  "coverage_is_approximate": true,
+  "stage": "EXPLORATORIA_POS_DESCRITIVA",
+  "analysis_pilots_examined_before_production": [
+    "BCa_Bonferroni_tail_feasibility_B100000",
+    "max_t_B100000"
+  ],
+  "resamples": 1000000,
+  "main_seed": 20261016,
+  "check_seed": 20261017,
+  "batch": 1000,
+  "quantile_method": "higher",
+  "critical_value": 3.7229344467121,
+  "check_critical_value": 3.723686533957392,
+  "zero_se_bootstrap_count": 0,
+  "check_zero_se_count": 0,
+  "max_endpoint_monte_carlo_difference_s": 0.0012602816901952753,
+  "zero_membership_change_count": 0,
+  "p_values_computed": false,
+  "stepdown_implemented": false,
+  "seeds_excluded": 0,
+  "simulation_changed": false,
+  "primary_input_csv_sha256": "6494e415f8e37cdbe06c1c68dd7fef6c08f6c52773e461441ffe07b935cd0701",
+  "script_sha256": "b1841681991c76b4caa612cd8ff9ae42aad2fbe011a3f754d0a146c6e1ae06d3",
+  "dependency_script_sha256": "c8d1a5a95a0a50447ca30cb0259157061f215c6e7c7c240f5a0d7016ddad476b",
+  "created_at_utc": "2026-10-14T21:52:55.416438+00:00",
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8"
+  },
+  "files_sha256": {
+    "contrastes_viagem_ic_simultaneos.csv": "8159c8b25d14eb6b1a41dde8c9060f0da988fc35cb6de12aeb3421931d92a7cd",
+    "distribuicao_max_t.npz": "0ea02a5b8b1e6c98b6a52f0067e6c487bced8e8eb7abfdd0e0e2b293c739758d",
+    "relatorio_estatistico.md": "9ddce2ee8c25e531ec2810935ca281583483cc93b32232bc4e8aee27cbd162fc",
+    "conferencia_monte_carlo.csv": "bd7dc348105687f7d9dfd91c17b6a79c1683c02453d2a0a78a6f5ae0a0c2049c",
+    "06_ic_simultaneos_viagem.svg": "fe9df03303c7185249d32bf39dd5be58a7da52c4a0afd5511317d0c4c17988fd",
+    "06_ic_simultaneos_viagem.png": "f194ee55cdc64a9138920534efb0a250ce9efc7efef18f3be8a9d5a42052c83c",
+    "influencia_por_seed_DIAGNOSTICO.csv": "e0edd5d24588a2d06db6c8d09ca560b85aff7dffa99141d7830c6a875de172af",
+    "resumo_influencia.csv": "9e54c937fa4999253c1737d62275df9bceabb1e918b48f806925382502b6cb29",
+    "metricas_complementares_descritivas.csv": "0869ec7114e180aa81875ea3b36028bc9d7279949bbd1d2245339a5d891788bd",
+    "diagnostico_caudas_bca_bonferroni.csv": "77a2858f6817cb6b58f0c90366d5ff0018cab4a80514d47989574afd7e13df40"
+  }
+}

@@ -33,3 +33,8 @@ output/analise/*
 !output/analise/baseline_v1_consolidado_v1/
 !output/analise/baseline_v1_descritiva_v1/
 !output/analise/baseline_v1_incerteza_v0_1/
+
+
+# Estatistica de viagem versionada - TC
+!output/analise/
+!output/analise/baseline_v1_estatistica_v1/
