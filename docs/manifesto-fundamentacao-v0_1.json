@@ -1,0 +1,45 @@
+{
+  "delivery": "Fundamentacao_Avaliacao_SUMO_v0_1",
+  "created_date_local": "2026-10-14",
+  "timezone": "America/Sao_Paulo",
+  "scope": "Leitura dirigida de trechos; oito artigos, PTC e fontes externas. Nao e revisao sistematica.",
+  "source_files_sha256": {
+    "03-andrade_2024.pdf": "842392b6013b166954c8800f56f7c78ece49f43587f3db793b832ceb28e0222a",
+    "04-zhai_2021.pdf": "2701c7f1184507c296b09476fc7ffe4838a34e29729ab8d0812418e9667db728",
+    "07-lopez_2018.pdf": "57378e710b790d4015434a783c0db03dea16c94e81762489ed598242072130f6",
+    "08-park_2019.pdf": "898bc4b15ad400157fc831b61ecea9e74b6d2ee3983eb6e4d8cee16d1b9bf0fa",
+    "09-mecheva_2022.pdf": "d6538e38e32bde64134a4d49092138e987ee15db8515a15495a1edf7560c60b5",
+    "10-balakrishna_2007.pdf": "6b879f7961784c881e8b351ca0123329ced28d678db8ff8481c7799a2538d736",
+    "17-makridis_2023.pdf": "cd1dd54f53bd9ca761ce4f3a4a6cf50028139e6a44e17388e83672403066ce0f",
+    "18-cobos_2020.pdf": "09adf236b0e61067309b4f585ebb634fc0b543cecc94f20ac60b8feedecc7831",
+    "19-makridis_2023-2-.pdf": "d5127953a21bc2fb1c752b097a9c3f6c445e83b0dd23b8d591d859146f7c76a0",
+    "21-referencias-1-1-.bib": "04c56b395b97e21bb845c631448dc8a25febc8b0dcd669a548b3ef226586112c",
+    "22-PTC-Valdir-ajustado-banca.pdf": "f9539c196ab47731007f1542f67e5018445eb3b7f72b264e31c84782cc5a573c"
+  },
+  "simulation_changed": false,
+  "published_results_recomputed": false,
+  "analytical_proposals_made_after_descriptive_review": true,
+  "sources_external": [
+    {
+      "name": "FHWA 2019 - capitulo 6",
+      "url": "https://ops.fhwa.dot.gov/publications/fhwahop18036/chapter6.htm"
+    },
+    {
+      "name": "FHWA 2004 - capitulo 6",
+      "url": "https://ops.fhwa.dot.gov/trafficanalysistools/tat_vol3/sect6.htm"
+    },
+    {
+      "name": "DiCiccio e Efron 1996 - secao 2",
+      "url": "https://www.math.wustl.edu/~kuffner/AlastairYoung/LeeYoung1996b.pdf"
+    },
+    {
+      "name": "SciPy 1.17.0 - bootstrap",
+      "url": "https://docs.scipy.org/doc/scipy-1.17.0/reference/generated/scipy.stats.bootstrap.html"
+    }
+  ],
+  "files_sha256": {
+    "docs/fundamentacao-avaliacao-v0_1.md": "46c264b70a6c8e5131bdb941efa4eb9bf0a8ff5f0100a97d0550230d4cf4d00b",
+    "docs/checkpoint-fundamentacao-2026-10-14.md": "124836cf91a13892b6fe8615a68214dbf908cbd575109619bc34369884122d07",
+    "docs/referencias-metodos-analise.bib": "65cb251b6a26af0afbcdd2c9960a9e16c3913d4a40b26b24a80e4aa1fa4cec8e"
+  }
+}
