@@ -1,0 +1,136 @@
+{
+  "analysis_version": "1.0",
+  "scope": "DESCRITIVO_SEM_INFERENCIA",
+  "created_at_utc": "2026-10-14T20:08:18.984421+00:00",
+  "audit": {
+    "rows": 630,
+    "unique_keys": 630,
+    "groups": 21,
+    "seeds_per_group": 30,
+    "total_trips_across_runs": 288750,
+    "emergency_braking": 120,
+    "collisions": 0,
+    "teleports": 0,
+    "source_zip_sha256": "7228cd8391abbef317b3ec19c8475ca4b8e5a7e88869269375072456ba6981a7",
+    "source_csv_sha256": "6494e415f8e37cdbe06c1c68dd7fef6c08f6c52773e461441ffe07b935cd0701",
+    "validation_OK_count": 630,
+    "direct_raw_XML_scope": "Amostra previamente examinada: 3 execuções; a coleta integral foi verificada pelo consolidador local.",
+    "lane_table_scope": "filas_por_faixa.csv não integra o ZIP recebido; não foi reexaminado diretamente nesta etapa."
+  },
+  "seeds_excluded": 0,
+  "scenario_order": [
+    "REF",
+    "EQU",
+    "CAU",
+    "AGR",
+    "MIX_C",
+    "MIX_N",
+    "MIX_A"
+  ],
+  "metrics": {
+    "travel_time_mean_s": [
+      "Tempo médio de viagem",
+      "s",
+      "principal"
+    ],
+    "trip_speed_mean_kmh": [
+      "Velocidade média de viagem",
+      "km/h",
+      "principal"
+    ],
+    "waiting_time_mean_s": [
+      "Tempo parado médio",
+      "s",
+      "principal"
+    ],
+    "queue_total_mean_m_0_600": [
+      "Soma das filas: média 0-600 s",
+      "m agregados",
+      "principal"
+    ],
+    "completion_flow_vph_0_600": [
+      "Vazão de conclusão 0-600 s",
+      "veículos/h",
+      "principal"
+    ],
+    "queue_total_mean_m_0_1800": [
+      "Soma das filas: média 0-1800 s",
+      "m agregados",
+      "complementar"
+    ],
+    "queue_lane_max_m_0_1800": [
+      "Maior fila em uma faixa 0-1800 s",
+      "m",
+      "complementar"
+    ],
+    "depart_delay_mean_s": [
+      "Atraso médio de inserção",
+      "s",
+      "complementar"
+    ],
+    "system_time_mean_s": [
+      "Tempo médio desde partida programada",
+      "s",
+      "complementar"
+    ],
+    "network_clearance_after600_s": [
+      "Drenagem após 600 s",
+      "s",
+      "complementar"
+    ],
+    "last_arrival_s": [
+      "Última chegada",
+      "s",
+      "complementar"
+    ],
+    "vehicles_with_waiting_pct": [
+      "Viagens com tempo parado",
+      "%",
+      "complementar"
+    ],
+    "waiting_share_pct": [
+      "Fração do tempo acumulado parado",
+      "%",
+      "complementar"
+    ],
+    "time_loss_mean_s": [
+      "Tempo perdido ante ideal individual",
+      "s",
+      "complementar"
+    ],
+    "emergency_braking_per1000trips": [
+      "Frenagens por mil viagens",
+      "eventos/1000 viagens",
+      "complementar"
+    ]
+  },
+  "within_group_sd_ddof": 1,
+  "quantile_method": "linear",
+  "skewness": "adjusted Fisher-Pearson",
+  "outlier_rule": "1.5 IQR; sinalização sem exclusão",
+  "primary_percentage_summary": "mean of per-seed paired percentages",
+  "no_confidence_intervals_or_hypothesis_tests": true,
+  "source_consolidator_version": "1.0.0",
+  "runtime_versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "matplotlib": "3.10.8"
+  },
+  "files_sha256": {
+    "Analise_Descritiva_SUMO_v1.pdf": "d917505a15870c45ef4a9f25a2cc3db0e8ae81e1e46f3a0ad700d89c4e49b9fd",
+    "scripts/analisar_descritivamente.py": "41b0102c28f423257d9493c799713a64c22e2ad97f9a05814257cf01699ae0b8",
+    "tabelas/diferencas_pareadas_por_seed.csv": "7a890a87ec6e8be5f9f9d11729f03d3e6faba07afe18f30789f9f7ed4d358686",
+    "tabelas/resumo_por_cenario.csv": "0e4dc5ae01103f88046eaaf76f376922d7aacb212eb71fb6f91ccfa2438a6ef9",
+    "tabelas/resumo_contrastes_pareados.csv": "df79ea5520b58f6c2fb07af3fcd9fc7aca214a2dc2b098de5380cfa7b22542cf",
+    "tabelas/observacoes_para_inspecao_MANTIDAS.csv": "dce0d636332fb3015ec475d51244b6a2da1c4ec434492606bab728ca9f153968",
+    "graficos/04_distribuicoes_625.svg": "b3306a1658f673f441083f851898534df5cd290a7873fb441b17de4c77ee512f",
+    "graficos/03_metricas_complementares.png": "c346a74b56519ab244bfb34bb5560adb6503577982d6b5c42001de68f4604545",
+    "graficos/02_diferencas_pareadas.svg": "5b1738fc724f710c43a49e673e048432caff486253ad9ce6fc5ba20b40364e93",
+    "graficos/04_distribuicoes_625.png": "b4968f1f9f192f01078a5182b0aa3677e8ffb359dbe5e107f217c3c6081c8373",
+    "graficos/03_metricas_complementares.svg": "b0babb9ef7a66b76e3771143d9c4bcd6adf1017ba86ad4c4fbd66e2c8ddb72cf",
+    "graficos/02_diferencas_pareadas.png": "65e52cf7c9157177701dcdcd7fb658450caa1edf73db783b8a4dbd0504173fc3",
+    "graficos/01_tempos_por_seed.png": "6a71d5b3f3f00ca998a35a09f9c25580d8d653514a0b222f729afa406d506332",
+    "graficos/01_tempos_por_seed.svg": "b0f1b3899421eac403e610c1c57eab2c6432241bfaa58a9429962deba5f87a8f"
+  }
+}

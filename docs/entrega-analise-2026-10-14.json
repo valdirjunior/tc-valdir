@@ -1,0 +1,69 @@
+{
+  "delivery": "Entrega_Analise_TC_2026_10_14",
+  "repository": "valdirjunior/tc-valdir",
+  "source_zip_sha256": "7228cd8391abbef317b3ec19c8475ca4b8e5a7e88869269375072456ba6981a7",
+  "stages": {
+    "consolidation": "1.0",
+    "descriptive": "1",
+    "uncertainty": "0.1_exploratory"
+  },
+  "simulation_changed": false,
+  "seeds_excluded": 0,
+  "raw_outputs_included": false,
+  "local_lane_table_not_reuploaded": "filas_por_faixa.csv; preserve existing local file",
+  "files_sha256": {
+    "docs/Protocolo_metricas_SUMO_v0_2.md": "63fbc209393845d560820fa696bd3ca4442d05ce2ad360715bf38167badc355f",
+    "docs/README-analises.md": "9a94fa6173a95617b99e580a011acce0c96beecea132fcc1545dcc674ef1214c",
+    "docs/README_consolidacao.md": "54136008dec0ed82d56f783be09984da07f0ea1ad5c7b29967108ab73856455a",
+    "docs/checkpoint-analise-2026-10-14.md": "ce68ca4b8d36999c99e45d87a5c7e7f492daddb4b62cff27f387911fe4bf23df",
+    "docs/comandos-git-analise-2026-10-14.ps1": "8dd8099d8eeadf2021175b11700f016ad357330824e98f83a654fbd3001a7c30",
+    "output/analise/baseline_v1_consolidado_v1/base_execucoes.csv": "6494e415f8e37cdbe06c1c68dd7fef6c08f6c52773e461441ffe07b935cd0701",
+    "output/analise/baseline_v1_consolidado_v1/dicionario_metricas.csv": "a4036273e42ce5a8086fb7f6799efb31447acabb66274d1d895c82ccd030c6e0",
+    "output/analise/baseline_v1_consolidado_v1/manifesto_consolidacao.json": "39deab485d3a744f39999a425c5508177244dc3ff45ac1d2ca3c68e65a203342",
+    "output/analise/baseline_v1_consolidado_v1/resultados_consolidacao.zip": "7228cd8391abbef317b3ec19c8475ca4b8e5a7e88869269375072456ba6981a7",
+    "output/analise/baseline_v1_consolidado_v1/validacao_consolidacao.csv": "f90de6f3cf96a9440edc33ba8450bf00f4adc20c55fccf38f14c2a7bea08efe8",
+    "output/analise/baseline_v1_descritiva_v1/Analise_Descritiva_SUMO_v1.pdf": "d917505a15870c45ef4a9f25a2cc3db0e8ae81e1e46f3a0ad700d89c4e49b9fd",
+    "output/analise/baseline_v1_descritiva_v1/LEIA-ME.md": "038a43082ba7a17cb1ca2f826b8e511c38110bc62d1a0cbd5f7158455bae7ac8",
+    "output/analise/baseline_v1_descritiva_v1/graficos/01_tempos_por_seed.png": "6a71d5b3f3f00ca998a35a09f9c25580d8d653514a0b222f729afa406d506332",
+    "output/analise/baseline_v1_descritiva_v1/graficos/01_tempos_por_seed.svg": "b0f1b3899421eac403e610c1c57eab2c6432241bfaa58a9429962deba5f87a8f",
+    "output/analise/baseline_v1_descritiva_v1/graficos/02_diferencas_pareadas.png": "65e52cf7c9157177701dcdcd7fb658450caa1edf73db783b8a4dbd0504173fc3",
+    "output/analise/baseline_v1_descritiva_v1/graficos/02_diferencas_pareadas.svg": "5b1738fc724f710c43a49e673e048432caff486253ad9ce6fc5ba20b40364e93",
+    "output/analise/baseline_v1_descritiva_v1/graficos/03_metricas_complementares.png": "c346a74b56519ab244bfb34bb5560adb6503577982d6b5c42001de68f4604545",
+    "output/analise/baseline_v1_descritiva_v1/graficos/03_metricas_complementares.svg": "b0babb9ef7a66b76e3771143d9c4bcd6adf1017ba86ad4c4fbd66e2c8ddb72cf",
+    "output/analise/baseline_v1_descritiva_v1/graficos/04_distribuicoes_625.png": "b4968f1f9f192f01078a5182b0aa3677e8ffb359dbe5e107f217c3c6081c8373",
+    "output/analise/baseline_v1_descritiva_v1/graficos/04_distribuicoes_625.svg": "b3306a1658f673f441083f851898534df5cd290a7873fb441b17de4c77ee512f",
+    "output/analise/baseline_v1_descritiva_v1/manifesto_analise.json": "0cf0aab33a5f82f23ff51b27c93170365f1ef30f0b89d1625a61e6b327d77746",
+    "output/analise/baseline_v1_descritiva_v1/scripts/analisar_descritivamente.py": "41b0102c28f423257d9493c799713a64c22e2ad97f9a05814257cf01699ae0b8",
+    "output/analise/baseline_v1_descritiva_v1/tabelas/diferencas_pareadas_por_seed.csv": "7a890a87ec6e8be5f9f9d11729f03d3e6faba07afe18f30789f9f7ed4d358686",
+    "output/analise/baseline_v1_descritiva_v1/tabelas/observacoes_para_inspecao_MANTIDAS.csv": "dce0d636332fb3015ec475d51244b6a2da1c4ec434492606bab728ca9f153968",
+    "output/analise/baseline_v1_descritiva_v1/tabelas/resumo_contrastes_pareados.csv": "df79ea5520b58f6c2fb07af3fcd9fc7aca214a2dc2b098de5380cfa7b22542cf",
+    "output/analise/baseline_v1_descritiva_v1/tabelas/resumo_por_cenario.csv": "0e4dc5ae01103f88046eaaf76f376922d7aacb212eb71fb6f91ccfa2438a6ef9",
+    "output/analise/baseline_v1_incerteza_v0_1/05_ic95_pareados_viagem.png": "d4145d48cbdbf52e19dc29998a2a51f39b0be60d979d031ae42e8b189ef350bd",
+    "output/analise/baseline_v1_incerteza_v0_1/05_ic95_pareados_viagem.svg": "6de139a423925f2ed6c4d0146cd06fb0f74944358fc6070abd839705a0ee631b",
+    "output/analise/baseline_v1_incerteza_v0_1/conferencia_monte_carlo.csv": "ffc1177f3af9053e62e84d48c1d60f08948be1752e33635f8fcfa8810e9b05bc",
+    "output/analise/baseline_v1_incerteza_v0_1/ic95_bca_tempo_viagem.csv": "afe3638a546445697702546acb4c0adcfd75f9dbe92a789f024d9ff671a0ffe7",
+    "output/analise/baseline_v1_incerteza_v0_1/manifesto_incerteza.json": "303a72e4dd0692c1b8d43656b7c2e0fa3f97b53964298899df58a882d9071293",
+    "output/analise/baseline_v1_incerteza_v0_1/relatorio_incerteza_pareada.md": "3987ec1f601397a53b46a8f65e63f9c927db9785bf66dbee0f798914102a3f04",
+    "scripts/analisar_descritivamente.py": "41b0102c28f423257d9493c799713a64c22e2ad97f9a05814257cf01699ae0b8",
+    "scripts/consolidar_experimento.py": "cbd3ea3a2528d6ff6b8375f5b5f688ff3220ac66f3249bcfcb02eb7075ee11cf",
+    "scripts/estimar_incerteza_pareada.py": "c8d1a5a95a0a50447ca30cb0259157061f215c6e7c7c240f5a0d7016ddad476b",
+    "scripts/instalar_entrega_analise.py": "30c834f9c6832e8e2fdd9c7351cacac601102f17956e81dbc5f8e1d9031f549f",
+    "testes/test_consolidacao.py": "8de7c001a0e292fb11182238be8a5874e65789992a6267daf4392dcf6cd2be7f"
+  },
+  "verification": {
+    "consolidator_tests_passed": 12,
+    "installer_checks": [
+      "dry_run_no_changes",
+      "all_conflicts_preflight",
+      "existing_files_preserved",
+      "idempotence",
+      "git_ignore_selected_outputs_visible_raw_outputs_ignored"
+    ],
+    "analysis_checks": [
+      "18_mean_deltas_match_descriptive",
+      "two_scalar_BCa_results_match_vectorized",
+      "forest_plot_visually_inspected"
+    ],
+    "source_xml_integration_scope": "Three REF runs, seed 1000; complete 630-run aggregate validation separately"
+  }
+}

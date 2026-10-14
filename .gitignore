@@ -25,3 +25,11 @@ tree.txt
 # Arquivos do Windows
 Thumbs.db
 Desktop.iniconfig/demanda/demanda_v2_old.json
+
+
+# Analises oficiais versionadas - TC
+!output/analise/
+output/analise/*
+!output/analise/baseline_v1_consolidado_v1/
+!output/analise/baseline_v1_descritiva_v1/
+!output/analise/baseline_v1_incerteza_v0_1/

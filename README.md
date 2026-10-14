@@ -28,4 +28,10 @@ Entorno da Praça Nereu Ramos, em Videira/SC.
 
 ## Estado atual
 
-Preparação e edição da rede viária no NetEdit.
+Coleta oficial concluída e consolidada. Análise descritiva finalizada; avaliação inicial de incerteza pareada disponível. Procedimento inferencial final em discussão.
+
+## Analise dos resultados
+
+Estado e caminhos atuais: [checkpoint da analise](docs/checkpoint-analise-2026-10-14.md).
+Organizacao e reproducao: [guia das analises](docs/README-analises.md).
+Scripts em scripts/; entregas oficiais versionadas em output/analise/.

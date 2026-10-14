@@ -1,0 +1,92 @@
+﻿campo;unidade;definicao;papel
+seed;identificador;Seed do bloco;controle
+demand_vehicles;identificador;Veículos programados em [0,600);controle
+scenario;identificador;Composição da execução;controle
+sumo_version;identificador;Versão conferida;controle
+protocol_version;identificador;Versão do protocolo de métricas;controle
+queue_external_lane_count;faixas;Denominador espacial fixo definido pelo snapshot;controle
+queue_internal_lane_count;faixas;Denominador espacial fixo definido pelo snapshot;controle
+trip_count;veículos;Viagens concluídas e IDs conferidos;controle
+profile_cauteloso_count;veículos;Quantidade efetivamente atribuída de cauteloso;controle
+profile_cauteloso_pct;%;Composição efetivamente atribuída de cauteloso;controle
+profile_normal_count;veículos;Quantidade efetivamente atribuída de normal;controle
+profile_normal_pct;%;Composição efetivamente atribuída de normal;controle
+profile_agressivo_count;veículos;Quantidade efetivamente atribuída de agressivo;controle
+profile_agressivo_pct;%;Composição efetivamente atribuída de agressivo;controle
+travel_time_mean_s;s;Média entre viagens: duration;principal
+travel_time_median_s;s;Mediana entre viagens: duration;complementar
+travel_time_sd_within_run_s;s;Desvio-padrão populacional entre viagens (divisor N): duration;complementar
+travel_time_p95_s;s;Percentil 95 linear entre viagens: duration;complementar
+waiting_time_mean_s;s;Média entre viagens: waitingTime;principal
+waiting_time_median_s;s;Mediana entre viagens: waitingTime;complementar
+waiting_time_sd_within_run_s;s;Desvio-padrão populacional entre viagens (divisor N): waitingTime;complementar
+waiting_time_p95_s;s;Percentil 95 linear entre viagens: waitingTime;complementar
+depart_delay_mean_s;s;Média entre viagens: departDelay;complementar
+depart_delay_median_s;s;Mediana entre viagens: departDelay;complementar
+depart_delay_sd_within_run_s;s;Desvio-padrão populacional entre viagens (divisor N): departDelay;complementar
+depart_delay_p95_s;s;Percentil 95 linear entre viagens: departDelay;complementar
+system_time_mean_s;s;Média de duration + departDelay;complementar
+time_loss_mean_s;s;"Média de timeLoss; referencial individual inclui speedFactor";complementar
+trip_speed_mean_mps;m/s;Média aritmética de routeLength/duration por veículo;principal
+aggregate_trip_speed_mps;m/s;Distância total/tempo acumulado das viagens;complementar
+route_length_mean_m;m;Comprimento médio efetivamente percorrido;controle
+vehicles_with_waiting_pct;%;Percentual das viagens com waitingTime > 0;complementar
+waiting_share_pct;%;Tempo parado total/duração total das viagens;complementar
+waiting_count_mean;episódios/viagem;Média de waitingCount;complementar
+last_arrival_s;s;Instante da última chegada, não fim configurado;complementar
+network_clearance_after600_s;s;Drenagem da coorte após 600 s, com toda a demanda concluída;complementar
+completed_count_0_600;veículos;Chegadas com 0 <= arrival < 600;controle
+completion_flow_vph_0_600;veículos/h;"Taxa equivalente de conclusões em [0,600); não capacidade";principal
+completed_share_pct_0_600;%;Fração da demanda concluída em [0,600);complementar
+completed_count_0_1800;veículos;Chegadas com 0 <= arrival < 1800;controle
+completion_flow_vph_0_1800;veículos/h;"Taxa equivalente de conclusões em [0,1800); não capacidade";complementar
+completed_share_pct_0_1800;%;Fração da demanda concluída em [0,1800);complementar
+demand_base_sha256;SHA256;Hash da demanda-base do bloco seed/demanda;controle
+emergency_braking_count;eventos;Eventos safety@emergencyBraking;complementar
+emergency_stops_count;eventos;"Eventos safety@emergencyStops; não sinônimo de frenagens";controle
+collision_count;eventos;Colisões registradas em stats.xml;controle
+teleport_count;eventos;Teleportes registrados em stats.xml;controle
+emergency_braking_per1000trips;eventos/1000 viagens;"Frenagens registradas por mil viagens; não risco real de acidente";complementar
+emergency_braking_log_count;eventos;"Pares distintos veículo/instante em warnings.log; sumo.log não é somado";controle
+emergency_braking_vehicle_count;veículos;Veículos distintos com aviso de frenagem em warnings.log;complementar
+queue_total_mean_m_0_600;m agregados entre faixas;Média da soma dos comprimentos exportados (stopped/all), 600 amostras com zeros;principal
+queue_total_presence_pct_0_600;% faixa × tempo;Proporção de observações faixa/tempo com comprimento >0 (stopped/all);complementar
+queue_sum_max_m_0_600;m agregados entre faixas;Máximo temporal da soma dos comprimentos entre faixas;complementar
+queue_lane_max_m_0_600;m;Maior comprimento exportado em uma faixa;complementar
+queue_lane_max_id_0_600;ID;"Faixa do máximo; primeira ocorrência na ordem do arquivo";controle
+queue_lane_max_time_s_0_600;s;"Instante do máximo; vazio quando todos os valores são zero";controle
+queue_external_mean_m_0_600;m agregados entre faixas;Média da soma dos comprimentos exportados (stopped/external), 600 amostras com zeros;principal
+queue_external_presence_pct_0_600;% faixa × tempo;Proporção de observações faixa/tempo com comprimento >0 (stopped/external);complementar
+queue_internal_mean_m_0_600;m agregados entre faixas;Média da soma dos comprimentos exportados (stopped/internal), 600 amostras com zeros;principal
+queue_internal_presence_pct_0_600;% faixa × tempo;Proporção de observações faixa/tempo com comprimento >0 (stopped/internal);complementar
+queue_slow_experimental_total_mean_m_0_600;m agregados entre faixas;Média da soma dos comprimentos exportados (slow/all), 600 amostras com zeros;complementar
+queue_slow_experimental_total_presence_pct_0_600;% faixa × tempo;Proporção de observações faixa/tempo com comprimento >0 (slow/all);complementar
+queue_slow_experimental_sum_max_m_0_600;m agregados entre faixas;Máximo temporal da soma dos comprimentos entre faixas;complementar
+queue_slow_experimental_lane_max_m_0_600;m;Maior comprimento exportado em uma faixa;complementar
+queue_slow_experimental_lane_max_id_0_600;ID;"Faixa do máximo; primeira ocorrência na ordem do arquivo";controle
+queue_slow_experimental_lane_max_time_s_0_600;s;"Instante do máximo; vazio quando todos os valores são zero";controle
+queue_slow_experimental_external_mean_m_0_600;m agregados entre faixas;Média da soma dos comprimentos exportados (slow/external), 600 amostras com zeros;complementar
+queue_slow_experimental_external_presence_pct_0_600;% faixa × tempo;Proporção de observações faixa/tempo com comprimento >0 (slow/external);complementar
+queue_slow_experimental_internal_mean_m_0_600;m agregados entre faixas;Média da soma dos comprimentos exportados (slow/internal), 600 amostras com zeros;complementar
+queue_slow_experimental_internal_presence_pct_0_600;% faixa × tempo;Proporção de observações faixa/tempo com comprimento >0 (slow/internal);complementar
+queue_total_mean_m_0_1800;m agregados entre faixas;Média da soma dos comprimentos exportados (stopped/all), 1800 amostras com zeros;complementar
+queue_total_presence_pct_0_1800;% faixa × tempo;Proporção de observações faixa/tempo com comprimento >0 (stopped/all);complementar
+queue_sum_max_m_0_1800;m agregados entre faixas;Máximo temporal da soma dos comprimentos entre faixas;complementar
+queue_lane_max_m_0_1800;m;Maior comprimento exportado em uma faixa;complementar
+queue_lane_max_id_0_1800;ID;"Faixa do máximo; primeira ocorrência na ordem do arquivo";controle
+queue_lane_max_time_s_0_1800;s;"Instante do máximo; vazio quando todos os valores são zero";controle
+queue_external_mean_m_0_1800;m agregados entre faixas;Média da soma dos comprimentos exportados (stopped/external), 1800 amostras com zeros;complementar
+queue_external_presence_pct_0_1800;% faixa × tempo;Proporção de observações faixa/tempo com comprimento >0 (stopped/external);complementar
+queue_internal_mean_m_0_1800;m agregados entre faixas;Média da soma dos comprimentos exportados (stopped/internal), 1800 amostras com zeros;complementar
+queue_internal_presence_pct_0_1800;% faixa × tempo;Proporção de observações faixa/tempo com comprimento >0 (stopped/internal);complementar
+queue_slow_experimental_total_mean_m_0_1800;m agregados entre faixas;Média da soma dos comprimentos exportados (slow/all), 1800 amostras com zeros;complementar
+queue_slow_experimental_total_presence_pct_0_1800;% faixa × tempo;Proporção de observações faixa/tempo com comprimento >0 (slow/all);complementar
+queue_slow_experimental_sum_max_m_0_1800;m agregados entre faixas;Máximo temporal da soma dos comprimentos entre faixas;complementar
+queue_slow_experimental_lane_max_m_0_1800;m;Maior comprimento exportado em uma faixa;complementar
+queue_slow_experimental_lane_max_id_0_1800;ID;"Faixa do máximo; primeira ocorrência na ordem do arquivo";controle
+queue_slow_experimental_lane_max_time_s_0_1800;s;"Instante do máximo; vazio quando todos os valores são zero";controle
+queue_slow_experimental_external_mean_m_0_1800;m agregados entre faixas;Média da soma dos comprimentos exportados (slow/external), 1800 amostras com zeros;complementar
+queue_slow_experimental_external_presence_pct_0_1800;% faixa × tempo;Proporção de observações faixa/tempo com comprimento >0 (slow/external);complementar
+queue_slow_experimental_internal_mean_m_0_1800;m agregados entre faixas;Média da soma dos comprimentos exportados (slow/internal), 1800 amostras com zeros;complementar
+queue_slow_experimental_internal_presence_pct_0_1800;% faixa × tempo;Proporção de observações faixa/tempo com comprimento >0 (slow/internal);complementar
+validation_status;status;"Integridade da extração; avisos não excluem a execução";controle
