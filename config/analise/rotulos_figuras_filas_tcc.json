@@ -1,0 +1,96 @@
+{
+  "version": "2.0.0",
+  "notes": "Rótulos editoriais. IDs usados apenas para vinculação aos resultados publicados; nenhuma agregação entre faixas.",
+  "lanes": [
+    {
+      "lane_id": "-E5_0",
+      "label": "Acesso Rua Farroupilha",
+      "label_lines": [
+        "Acesso Rua Farroupilha"
+      ],
+      "source": "ROTULO_DEMANDA_CONGELADA"
+    },
+    {
+      "lane_id": "203038544#1_2",
+      "label": "Praça Nereu Ramos",
+      "label_lines": [
+        "Praça Nereu Ramos"
+      ],
+      "source": "OSM_ID_BASE"
+    },
+    {
+      "lane_id": "-E6_0",
+      "label": "Acesso Rua Nicolau Cavon",
+      "label_lines": [
+        "Acesso Rua Nicolau Cavon"
+      ],
+      "source": "ROTULO_DEMANDA_CONGELADA"
+    },
+    {
+      "lane_id": "98384533_2",
+      "label": "Rua Vitória (sentido Rua Nicolau Cavon)",
+      "label_lines": [
+        "Rua Vitória",
+        "sentido Rua Nicolau Cavon"
+      ],
+      "source": "OSM_ID_BASE_E_CONEXAO_REDE",
+      "outgoing_edge": "99370098#0"
+    },
+    {
+      "lane_id": ":1138208969_3_0",
+      "label": "Ligação Rua Vitória → Rua Nicolau Cavon",
+      "label_lines": [
+        "Ligação Rua Vitória",
+        "→ Rua Nicolau Cavon"
+      ],
+      "source": "CONEXAO_VIA_REDE_CONGELADA",
+      "from_edge": "98384533",
+      "to_edge": "99370098#0"
+    },
+    {
+      "lane_id": "320316413_1",
+      "label": "Rua Brasil",
+      "label_lines": [
+        "Rua Brasil"
+      ],
+      "source": "OSM_ID_BASE"
+    },
+    {
+      "lane_id": ":1149979222_2_1",
+      "label": "Ligação Praça Nereu Ramos → Rua Pedro Andreazza",
+      "label_lines": [
+        "Ligação Praça Nereu Ramos",
+        "→ Rua Pedro Andreazza"
+      ],
+      "source": "CONEXAO_VIA_REDE_CONGELADA",
+      "from_edge": "203038544#1",
+      "to_edge": "313365849"
+    },
+    {
+      "lane_id": "99631677_0",
+      "label": "Rua Santa Catarina",
+      "label_lines": [
+        "Rua Santa Catarina"
+      ],
+      "source": "OSM_ID_BASE"
+    },
+    {
+      "lane_id": "98384533_1",
+      "label": "Rua Vitória (conversão para a praça)",
+      "label_lines": [
+        "Rua Vitória",
+        "conversão para a praça"
+      ],
+      "source": "OSM_ID_BASE_E_CONEXAO_REDE",
+      "outgoing_edge": "203038544#0"
+    },
+    {
+      "lane_id": "313365849_1",
+      "label": "Rua Pedro Andreazza",
+      "label_lines": [
+        "Rua Pedro Andreazza"
+      ],
+      "source": "OSM_ID_BASE"
+    }
+  ]
+}
