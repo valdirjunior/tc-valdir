@@ -1,9 +1,0 @@
---- a/.gitignore
-+++ b/.gitignore
-@@ -43,3 +43,6 @@
- # Analise espacial de filas versionada - TC
- !output/analise/
- !output/analise/baseline_v1_filas_espacial_v1/
-+
-+# Figuras espaciais para o TCC - apresentacao v2
-+!output/analise/baseline_v1_figuras_filas_tcc_v2/
