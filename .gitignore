@@ -13,8 +13,6 @@ __pycache__/
 
 # Resultados gerados pelas simulações
 output/*
-!output/.gitkeep
-
 # Arquivos temporários
 *.log
 *.tmp
@@ -24,22 +22,17 @@ tree.txt
 
 # Arquivos do Windows
 Thumbs.db
-Desktop.iniconfig/demanda/demanda_v2_old.json
+Desktop.ini
+config/demanda/demanda_v2_old.json
 
 
-# Analises oficiais versionadas - TC
+# Analises versionadas - TC
 !output/analise/
 output/analise/*
 !output/analise/baseline_v1_consolidado_v1/
 !output/analise/baseline_v1_descritiva_v1/
-!output/analise/baseline_v1_incerteza_v0_1/
-
-
-# Estatistica de viagem versionada - TC
-!output/analise/
-!output/analise/baseline_v1_estatistica_v1/
-
-
-# Analise espacial de filas versionada - TC
-!output/analise/
 !output/analise/baseline_v1_filas_espacial_v1/
+
+# Materiais exploratorios historicos preservados
+!output/analise/baseline_v1_incerteza_v0_1/
+!output/analise/baseline_v1_estatistica_v1/
